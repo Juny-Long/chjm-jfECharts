@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>春和景明38天瘦15斤打卡基地</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF9800;
+            --primary-light: #FFB74D;
+            --primary-dark: #F57C00;
+            --secondary: #FF5722;
+            --accent: #FFD54F;
+            --light: #FFF8E1;
+            --dark: #333;
+            --success: #4CAF50;
+            --warning: #FFC107;
+            --danger: #F44336;
+            --shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: linear-gradient(135deg, #fff7e6, #ffedcc);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            color: white;
+            position: relative;
+            overflow: hidden;
+    width: 1830px;
+        }
+        
+        header:before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(45deg, var(--primary-light), var(--primary), var(--primary-dark));
+            z-index: -1;
+            filter: blur(10px);
+            opacity: 0.7;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        h1 i {
+            background: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            opacity: 0.95;
+        }
+        
+        .supervisors {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 25px;
+            border-radius: 30px;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+        
+        .date-range {
+            background: rgba(255, 255, 255, 0.25);
+            display: inline-block;
+            padding: 8px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            margin-top: 15px;
+            border: 2px dashed rgba(255, 255, 255, 0.4);
+        }
+        
+        .dashboard {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .chart-container, .stats-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .chart-container:hover, .stats-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .section-title {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--primary-light);
+        }
+        
+        .section-title i {
+            margin-right: 12px;
+            background: var(--primary-light);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .stat-card {
+            background: linear-gradient(to bottom right, var(--light), #fff);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255, 152, 0, 0.1);
+        }
+        
+        .stat-value {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin: 10px 0;
+        }
+        
+        .stat-label {
+            font-size: 0.95rem;
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .progress-container {
+            margin-top: 20px;
+        }
+        
+        .progress-title {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .progress-bar {
+            height: 14px;
+            background: #f5f5f5;
+            border-radius: 7px;
+            overflow: hidden;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 7px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .progress-fill:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, 
+                rgba(255,255,255,0.15) 25%, 
+                transparent 25%, 
+                transparent 50%, 
+                rgba(255,255,255,0.15) 50%, 
+                rgba(255,255,255,0.15) 75%, 
+                transparent 75%);
+            background-size: 30px 30px;
+            animation: progressAnimation 1s linear infinite;
+        }
+        
+        @keyframes progressAnimation {
+            0% { background-position: 0 0; }
+            100% { background-position: 30px 0; }
+        }
+        
+        .data-table-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+            overflow-x: auto;
+            margin-bottom: 30px;
+            transition: var(--transition);
+        }
+        
+        .data-table-container:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        
+        th, td {
+            padding: 16px 12px;
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        th {
+            background: linear-gradient(to bottom, var(--primary-light), var(--primary));
+            color: white;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+        }
+        
+        tr:nth-child(even) {
+            background-color: rgba(255, 243, 224, 0.3);
+        }
+        
+        tr:hover {
+            background-color: rgba(255, 224, 178, 0.4);
+        }
+        
+        .improvement {
+            color: var(--success);
+            font-weight: bold;
+            position: relative;
+        }
+        
+        .improvement:before {
+            content: '↓';
+            margin-right: 4px;
+        }
+        
+        .regression {
+            color: var(--danger);
+            font-weight: bold;
+            position: relative;
+        }
+        
+        .regression:before {
+            content: '↑';
+            margin-right: 4px;
+        }
+        
+        .member-name {
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-align: left;
+            padding-left: 20px;
+        }
+        
+        .summary {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+            transition: var(--transition);
+            border-left: 5px solid var(--primary);
+        }
+        
+        .summary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+        
+        .summary h3 {
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .summary h3 i {
+            background: var(--primary-light);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .summary-points {
+            list-style-type: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .summary-points li {
+            padding: 15px;
+            border-radius: 10px;
+            background: rgba(255, 243, 224, 0.5);
+            position: relative;
+            padding-left: 55px;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            transition: var(--transition);
+        }
+        
+        .summary-points li:hover {
+            background: rgba(255, 224, 178, 0.4);
+            transform: translateX(5px);
+        }
+        
+        .summary-points li:before {
+            content: "★";
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary);
+            font-size: 2rem;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .highlight {
+            background: linear-gradient(to right, var(--accent), var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            padding: 0 5px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 1rem;
+            color: #666;
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+        
+        .legend {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 5px 15px;
+            border-radius: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 992px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.4rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            table {
+                font-size: 0.9rem;
+            }
+            
+            th, td {
+                padding: 12px 8px;
+            }
+            
+            .summary-points {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.6rem;
+            }
+            
+            .date-range, .supervisors {
+                font-size: 0.9rem;
+                padding: 6px 15px;
+            }
+            
+            .section-title {
+                font-size: 1.3rem;
+            }
+        }
+        
+        /* 动画效果 */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animated {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        .delay-5 { animation-delay: 0.5s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="animated">
+            <h1>
+                <i class="fas fa-weight-scale"></i>
+                春和景明38天瘦15斤打卡基地
+            </h1>
+            <div class="subtitle">与志同道合的朋友一起挑战自我，攀登健康高峰！</div>
+            <div class="supervisors">
+                <i class="fas fa-user-check"></i>
+                监督员：棋子🌾龙龙
+            </div>
+            <div class="date-range">
+                <i class="fas fa-calendar-alt"></i>
+                挑战时间：2025年6月23日 - 2025年7月31日 • 第8天
+            </div>
+        </header>
+        
+        <div class="dashboard">
+            <div class="chart-container animated delay-1">
+
+            </div>
+            
+            <div class="stats-container animated delay-2">
+                <h2 class="section-title">
+                    <i class="fas fa-trophy"></i>
+                    挑战进度
+                </h2>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-label">参与成员</div>
+                        <div class="stat-value">9</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">已进行天数</div>
+                        <div class="stat-value">8</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">剩余天数</div>
+                        <div class="stat-value">30</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">总减重</div>
+                        <div class="stat-value">19.8斤</div>
+                    </div>
+                </div>
+                
+                <h3 class="section-title" style="font-size: 1.3rem; margin-top: 25px;">
+                    <i class="fas fa-running"></i>
+                    最佳表现
+                </h3>
+                
+                <div class="progress-container">
+                    <div class="progress-title">
+                        <span>吉皮</span>
+                        <span>4.4斤 (44%)</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 44%"></div>
+                    </div>
+                </div>
+                
+                <div class="progress-container">
+                    <div class="progress-title">
+                        <span>钟慧</span>
+                        <span>3.4斤 (34%)</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 34%"></div>
+                    </div>
+                </div>
+                
+                <div class="progress-container">
+                    <div class="progress-title">
+                        <span>邓雄</span>
+                        <span>2.3斤 (23%)</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 23%"></div>
+                    </div>
+                </div>
+                
+                <div class="progress-container">
+                    <div class="progress-title">
+                        <span>杨杨</span>
+                        <span>1.7斤 (17%)</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 17%"></div>
+                    </div>
+                </div>
+                
+                <div class="progress-container">
+                    <div class="progress-title">
+                        <span>芊芊</span>
+                        <span>1.5斤 (15%)</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 15%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="data-table-container animated delay-3">
+            <h2 class="section-title">
+                <i class="fas fa-table"></i>
+                详细打卡数据
+            </h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>成员</th>
+                        <th>初始体重</th>
+                        <th>目标体重</th>
+                        <th>目标减重</th>
+                        <th>6/25</th>
+                        <th>6/26</th>
+                        <th>6/27</th>
+                        <th>6/28</th>
+                        <th>6/29</th>
+                        <th>6/30</th>
+                        <th>7/1</th>
+                        <th>当前减重</th>
+                        <th>完成度</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="member-name">钟慧</td>
+                        <td>120.2</td>
+                        <td>105.2</td>
+                        <td>15斤</td>
+                        <td>117.50</td>
+                        <td class="improvement">116.80</td>
+                        <td class="regression">117.80</td>
+                        <td class="improvement">117.10</td>
+                        <td class="regression">119.10</td>
+                        <td class="improvement">117.00</td>
+                        <td class="improvement">116.80</td>
+                        <td class="improvement">-3.4斤</td>
+                        <td class="improvement">22.7%</td>
+                    </tr>
+                    <tr>
+                        <td class="member-name">芊芊</td>
+                        <td>154.7</td>
+                        <td>139.7</td>
+                        <td>15斤</td>
+                        <td>154.20</td>
+                        <td class="improvement">152.80</td>
+                        <td class="regression">153.50</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>154.20</td>
+                        <td class="improvement">153.20</td>
+                        <td class="improvement">-1.5斤</td>
+                        <td class="improvement">10.0%</td>
+                    </tr>
+                    <tr>
+                        <td class="member-name">向明</td>
+                        <td>170.0</td>
+                        <td>158.0</td>
+                        <td>12斤</td>
+                        <td class="regression">173.50</td>
+                        <td>-</td>
+                        <td class="improvement">167.40</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td class="improvement">-1.1斤</td>
+                        <td class="improvement">9.2%</td>
+                    </tr>
+                    <tr>
+                        <td class="member-name">吉皮</td>
+                        <td>154.0</td>
+                        <td>144.0</td>
+                        <td>10斤</td>
+                        <td>152.00</td>
+                        <td class="improvement">151.00</td>
+                        <td class="improvement">150.50</td>
+                        <td class="improvement">150.00</td>
+                        <td class="improvement">149.50</td>
+                        <td class="regression">149.60</td>
+                        <td>149.60</td>
+                        <td class="improvement">-4.4斤</td>
+                        <td class="improvement">44.0%</td>
+                    </tr>
+                    <tr>
+                        <td class="member-name">邓雄</td>
+                        <td>156.0</td>
+                        <td>140.0</td>
+                        <td>16斤</td>
+                        <td>155.30</td>
+                        <td class="improvement">154.50</td>
+                        <td class="regression">154.70</td>
+                        <td class="improvement">154.20</td>
+                        <td class="improvement">153.70</td>
+                        <td>153.70</td>
+                        <td>153.70</td>
+                        <td class="improvement">-2.3斤</td>
+                        <td class="improvement">14.4%</td>
+                    </tr>
+                    <tr>
+                        <td class="member-name">婉儿</td>
+                        <td>118.0</td>
+                        <td>108.0</td>
+                        <td>10斤</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td class="member-name">野鹤</td>
+                        <td>136.0</td>
+                        <td>126.0</td>
+                        <td>10斤</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>130.00</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td class="improvement">-6.0斤</td>
+                        <td class="improvement">60.0%</td>
+                    </tr>
+                    <tr>
+                        <td class="member-name">吆吔</td>
+                        <td>118.0</td>
+                        <td>113.0</td>
+                        <td>5斤</td>
+                        <td>119.20</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td class="regression">+1.2斤</td>
+                        <td class="regression">-24.0%</td>
+                    </tr>
+                    <tr>
+                        <td class="member-name">杨杨</td>
+                        <td>130.0</td>
+                        <td>120.0</td>
+                        <td>10斤</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td class="improvement">128.30</td>
+                        <td>-</td>
+                        <td class="improvement">-1.7斤</td>
+                        <td class="improvement">17.0%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="summary animated delay-4">
+            <h3>
+                <i class="fas fa-clipboard-list"></i>
+                挑战深度分析
+            </h3>
+            <ul class="summary-points">
+                <li>
+                    <span class="highlight">吉皮</span> 以44%的完成率领先！从154斤减至149.6斤，共减4.4斤。
+                    需注意6月30日-7月1日体重停滞，建议调整饮食结构。
+                </li>
+                <li>
+                    <span class="highlight">钟慧</span> 表现稳定，7月1日降至116.8斤，累计减重3.4斤。
+                    成功克服了6月29日因烧烤饮料导致的反弹，展现良好恢复能力。
+                </li>
+                <li>
+                    <span class="highlight">芊芊</span> 7月1日取得进展，减至153.2斤，累计减重1.5斤。
+                    建议增加有氧运动频率，每周至少3次30分钟以上运动。
+                </li>
+                <li>
+                    <span class="highlight">邓雄</span> 体重稳定在153.7斤，累计减重2.3斤。
+                    过去三天体重无变化，建议尝试轻断食或增加运动强度。
+                </li>
+                <li>
+                    <span class="highlight">杨杨</span> 首次记录128.3斤，减重1.7斤，良好开端！
+                    建议制定详细饮食计划，保持记录习惯。
+                </li>
+                <li>
+                    <span class="highlight">野鹤</span> 以6斤减重暂列第二，但近期无新数据。
+                    请尽快恢复打卡，保持减重势头。
+                </li>
+                <li>
+                    <span class="highlight">向明</span> 需注意数据更新频率，目前减重1.1斤。
+                    避免大餐后体重波动，保持饮食规律。
+                </li>
+                <li>
+                    <span class="highlight">婉儿、吆吔</span> 请尽快恢复打卡。吆吔需特别关注，
+                    目前增重1.2斤，建议咨询营养师调整饮食方案。
+                </li>
+            </ul>
+        </div>
+        
+        <footer class="animated delay-5">
+            <p>春和景明爬山小分队 • 38天瘦15斤挑战 • 数据更新于2025年7月1日</p>
+            <p>监督员：棋子🌾、龙龙 | 技术支持：爬山小分队IT组 | 我们的生命是一万次的春和景明</p>
+        </footer>
+    </div>
+
+    <script>
+        // 确保在页面加载完成后执行
+        document.addEventListener('DOMContentLoaded', function() {
+            // 准备图表数据
+            const dates = ['6/25', '6/26', '6/27', '6/28', '6/29', '6/30', '7/1'];
+            
+            const weightData = {
+                '钟慧': [117.50, 116.80, 117.80, 117.10, 119.10, 117.00, 116.80],
+                '芊芊': [154.20, 152.80, 153.50, null, null, 154.20, 153.20],
+                '向明': [173.50, null, 167.40, null, null, null, null],
+                '吉皮': [152.00, 151.00, 150.50, 150.00, 149.50, 149.60, 149.60],
+                '邓雄': [155.30, 154.50, 154.70, 154.20, 153.70, 153.70, 153.70],
+                '杨杨': [null, null, null, null, null, 128.30, null]
+            };
+            
+            const targetWeights = {
+                '钟慧': 105.2,
+                '芊芊': 139.7,
+                '向明': 158.0,
+                '吉皮': 144.0,
+                '邓雄': 140.0,
+                '杨杨': 120.0
+            };
+            
+            // 创建图表
+            const ctx = document.getElementById('weightChart').getContext('2d');
+            const weightChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: dates,
+                    datasets: [
+                        {
+                            label: '钟慧',
+                            data: weightData['钟慧'],
+                            borderColor: '#FF6384',
+                            backgroundColor: 'rgba(255, 99, 132, 0.1)',
+                            borderWidth: 3,
+                            tension: 0.3,
+                            fill: false,
+                            pointRadius: 5,
+                            pointHoverRadius: 7,
+                            pointBackgroundColor: '#fff',
+                            pointBorderWidth: 2
+                        },
+                        {
+                            label: '芊芊',
+                            data: weightData['芊芊'],
+                            borderColor: '#36A2EB',
+                            backgroundColor: 'rgba(54, 162, 235, 0.1)',
+                            borderWidth: 3,
+                            tension: 0.3,
+                            fill: false,
+                            pointRadius: 5,
+                            pointHoverRadius: 7,
+                            pointBackgroundColor: '#fff',
+                            pointBorderWidth: 2
+                        },
+                        {
+                            label: '向明',
+                            data: weightData['向明'],
+                            borderColor: '#FFCE56',
+                            backgroundColor: 'rgba(255, 206, 86, 0.1)',
+                            borderWidth: 3,
+                            tension: 0.3,
+                            fill: false,
+                            pointRadius: 5,
+                            pointHoverRadius: 7,
+                            pointBackgroundColor: '#fff',
+                            pointBorderWidth: 2
+                        },
+                        {
+                            label: '吉皮',
+                            data: weightData['吉皮'],
+                            borderColor: '#4BC0C0',
+                            backgroundColor: 'rgba(75, 192, 192, 0.1)',
+                            borderWidth: 3,
+                            tension: 0.3,
+                            fill: false,
+                            pointRadius: 5,
+                            pointHoverRadius: 7,
+                            pointBackgroundColor: '#fff',
+                            pointBorderWidth: 2
+                        },
+                        {
+                            label: '邓雄',
+                            data: weightData['邓雄'],
+                            borderColor: '#9966FF',
+                            backgroundColor: 'rgba(153, 102, 255, 0.1)',
+                            borderWidth: 3,
+                            tension: 0.3,
+                            fill: false,
+                            pointRadius: 5,
+                            pointHoverRadius: 7,
+                            pointBackgroundColor: '#fff',
+                            pointBorderWidth: 2
+                        },
+                        {
+                            label: '杨杨',
+                            data: weightData['杨杨'],
+                            borderColor: '#8AC24A',
+                            backgroundColor: 'rgba(138, 194, 74, 0.1)',
+                            borderWidth: 3,
+                            tension: 0.3,
+                            fill: false,
+                            pointRadius: 5,
+                            pointHoverRadius: 7,
+                            pointBackgroundColor: '#fff',
+                            pointBorderWidth: 2
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: false,
+                            title: {
+                                display: true,
+                                text: '体重 (斤)',
+                                color: '#666',
+                                font: {
+                                    size: 14,
+                                    weight: 'bold'
+                                }
+                            },
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.05)'
+                            },
+                            ticks: {
+                                color: '#666'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: '日期',
+                                color: '#666',
+                                font: {
+                                    size: 14,
+                                    weight: 'bold'
+                                }
+                            },
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.05)'
+                            },
+                            ticks: {
+                                color: '#666'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        title: {
+                            display: true,
+                            text: '每日体重变化趋势',
+                            color: '#333',
+                            font: {
+                                size: 18,
+                                weight: 'bold'
+                            },
+                            padding: {
+                                top: 10,
+                                bottom: 20
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(255, 255, 255, 0.95)',
+                            titleColor: '#FF9800',
+                            bodyColor: '#333',
+                            borderColor: '#FF9800',
+                            borderWidth: 1,
+                            padding: 12,
+                            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)',
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed.y !== null) {
+                                        label += context.parsed.y + '斤';
+                                    } else {
+                                        label += '未记录';
+                                    }
+                                    return label;
+                                },
+                                footer: function(tooltipItems) {
+                                    const datasetIndex = tooltipItems[0].datasetIndex;
+                                    const member = weightChart.data.datasets[datasetIndex].label;
+                                    const target = targetWeights[member];
+                                    return `目标体重: ${target}斤`;
+                                }
+                            }
+                        }
+                    },
+                    interaction: {
+                        mode: 'index',
+                        intersect: false
+                    },
+                    elements: {
+                        point: {
+                            hoverRadius: 8
+                        }
+                    }
+                }
+            });
+
+            
+                 // 修复：正确处理窗口大小变化
+            let resizeTimer;
+            window.addEventListener('resize', function() {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(function() {
+                    weightChart.resize();
+                }, 200);
+ 
+        });
+    </script>
+</body>
+</html>
